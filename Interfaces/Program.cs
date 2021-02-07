@@ -6,6 +6,12 @@ namespace Interfaces
     {
         private static void Main(string[] args)
         {
+            CustomerManager customerManager = new CustomerManager();
+            customerManager.Add(new SqlServerCustomerDal());
+            customerManager.Add(new OracleCustomerDal());
+
+            Console.WriteLine(" ");
+
             PersonManager manager = new PersonManager();
             manager.Add(new Customer { Id = 1, FirstName = "Elif", LastName = "Pirgaip", Address = "London" });
 
