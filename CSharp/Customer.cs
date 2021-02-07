@@ -9,7 +9,7 @@ namespace Classes
         // get- set : değeri vermek, değeri okumak.
         // Encapsulation : 
         // property tanımlama : 
-        public int ID { get; set; }
+        public int ID { get; set; } 
         // single responsibilty'e pek uymaz. -> aşağıdaki kullanım artık pek kullanılmaz.
         string _firstName;
         public string FirstName
