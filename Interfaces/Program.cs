@@ -6,9 +6,20 @@ namespace Interfaces
     {
         private static void Main(string[] args)
         {
-            CustomerManager customerManager = new CustomerManager();
-            customerManager.Add(new SqlServerCustomerDal());
-            customerManager.Add(new OracleCustomerDal());
+            //CustomerManager customerManager = new CustomerManager();
+            //customerManager.Add(new SqlServerCustomerDal());
+            //customerManager.Add(new OracleCustomerDal());
+
+            ICustomerDal[] customerDals = new ICustomerDal[3]
+            {
+                new SqlServerCustomerDal(),
+                new OracleCustomerDal(),
+                new MySqlCustomerDal()
+            };
+            foreach (var customerDal in customerDals)
+            {
+                customerDal.Add();
+            }
 
             Console.WriteLine(" ");
 
